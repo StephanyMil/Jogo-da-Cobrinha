@@ -1,2 +1,2 @@
 # Jogo-da-Cobrinha
-Projeto de LPP
+Projeto de Linguagens e Paradigmas de Programação.
