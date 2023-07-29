@@ -18,7 +18,38 @@ const snake = [
     { x: 290, y: 200 }
 ]
 
-let direction
+
+//Aline
+const incrementScore = () => {
+    
+}
+
+// Stephany
+const randomNumber = (min, max) => {
+    
+}
+
+// Stephany
+const randomPosition = () => {
+    
+}
+
+// Stephany
+const randomColor = () => {
+    
+}
+
+// Stephany
+const food = {
+    
+}
+
+let direction, loopId
+
+// Stephany
+const drawFood = () => {
+    
+}
 
 // Stephany
 const drawSnake = () => {
@@ -59,9 +90,51 @@ const moveSnake = () => {
 }
 
 // Aline
-setInterval(() => {
-    ctx.clearRect(0, 0, 600, 600)
+const drawGrid = () => {
+    
+}
 
-    moveSnake()
-    drawSnake()
-}, 300)
+// Stephany
+const checkEat = () => {
+    
+}
+
+// Aline
+const checkCollision = () => {
+    
+}
+
+// Aline
+const gameOver = () => {
+    
+}
+
+const gameLoop = () => {
+    
+}
+
+gameLoop()
+
+// Aline
+document.addEventListener("keydown", ({ key }) => {
+    if (key == "ArrowRight" && direction != "left") {
+        direction = "right"
+    }
+
+    if (key == "ArrowLeft" && direction != "right") {
+        direction = "left"
+    }
+
+    if (key == "ArrowDown" && direction != "up") {
+        direction = "down"
+    }
+
+    if (key == "ArrowUp" && direction != "down") {
+        direction = "up"
+    }
+})
+
+// Aline
+buttonPlay.addEventListener() => {
+    
+}
