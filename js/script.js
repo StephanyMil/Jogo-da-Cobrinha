@@ -12,13 +12,24 @@ const size = 30
 
 // Stephany
 const snake = [
-    
+    { x: 200, y: 200 },
+    { x: 230, y: 200 },
+    { x: 260, y: 200 },
+    { x: 290, y: 200 }
 ]
 
 let direction
 
 // Stephany
 const drawSnake = () => {
+    ctx.fillStyle = "#ddd"
+
+    snake.forEach((position, index) => {
+        if(index == snake.length - 1) {
+            ctx.fillStyle = "#ffb6c0"
+        }
+        ctx.fillRect(position.x, position.y, size, size)
+    })
     
 }
 
