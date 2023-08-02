@@ -170,6 +170,7 @@ const gameLoop = () => {
     drawSnake()
     drawFood()
     checkEat()
+    checkCollision()
 
     loopId = setTimeout(() => {
         gameLoop();
