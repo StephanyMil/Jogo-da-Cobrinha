@@ -10,14 +10,9 @@ const audio = new Audio("../assets/audio.mp3")
 
 const size = 30
 
-// Stephany
-const snake = [
-    { x: 200, y: 200 },
-    { x: 230, y: 200 },
-    { x: 260, y: 200 },
-    { x: 290, y: 200 }
-]
+const initialPosition = { x: 270, y: 240 }
 
+let snake = [initialPosition]
 
 //Aline
 const incrementScore = () => {
@@ -26,29 +21,43 @@ const incrementScore = () => {
 
 // Stephany
 const randomNumber = (min, max) => {
-    
+    return Math.round(Math.random() * (max - min) + min)
 }
 
 // Stephany
 const randomPosition = () => {
-    
+    const number = randomNumber(0, canvas.width - size)
+    return Math.round(number / 30) * 30
 }
 
 // Stephany
 const randomColor = () => {
-    
+    const red = randomNumber(0, 255)
+    const green = randomNumber(0, 255)
+    const blue = randomNumber(0, 255)
+    const yellow = randomNumber(0, 255)
+
+    return `rgb(${red}, ${green}, ${blue}, ${yellow})`
 }
 
 // Stephany
 const food = {
-    
+    x: randomPosition(),
+    y: randomPosition(),
+    color: randomColor()
 }
 
 let direction, loopId
 
 // Stephany
 const drawFood = () => {
-    
+    const { x, y, color } = food
+
+    ctx.shadowColor = color
+    ctx.shadowBlur = 6
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, size, size)
+    ctx.shadowBlur = 0
 }
 
 // Stephany
@@ -60,8 +69,7 @@ const drawSnake = () => {
             ctx.fillStyle = "#ffb6c0"
         }
         ctx.fillRect(position.x, position.y, size, size)
-    })
-    
+    })  
 }
 
 // Aline
@@ -111,7 +119,24 @@ const drawGrid = () => {
 
 // Stephany
 const checkEat = () => {
-    
+    const head = snake[snake.length - 1]
+
+    if (head.x == food.x && head.y == food.y) {
+        snake.push(head)
+        audio.play()
+
+        let x = randomPosition()
+        let y = randomPosition()
+
+        while (snake.find((position) => position.x == x && position.y == y)) {
+            x = randomPosition()
+            y = randomPosition()
+        }
+
+        food.x = x
+        food.y = y
+        food.color = randomColor()
+    }
 }
 
 // Aline
@@ -125,7 +150,17 @@ const gameOver = () => {
 }
 
 const gameLoop = () => {
-    
+    clearInterval(loopId)
+
+    ctx.clearRect(0, 0, 600, 600)
+    moveSnake()
+    drawSnake()
+    drawFood()
+    checkEat()
+
+    loopId = setTimeout(() => {
+        gameLoop();
+    }, 300)
 }
 
 gameLoop()
@@ -150,6 +185,7 @@ document.addEventListener("keydown", ({ key }) => {
 })
 
 // Aline
+/*
 buttonPlay.addEventListener() => {
     
-}
+}*/
