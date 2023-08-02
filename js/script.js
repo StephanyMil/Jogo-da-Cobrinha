@@ -168,6 +168,7 @@ const gameLoop = () => {
     ctx.clearRect(0, 0, 600, 600)
     moveSnake()
     drawSnake()
+    drawGrid()
     drawFood()
     checkEat()
     checkCollision()
@@ -198,7 +199,7 @@ document.addEventListener("keydown", ({ key }) => {
     }
 })
 
-// Aline
+// Stephany
 /*
 buttonPlay.addEventListener() => {
     
