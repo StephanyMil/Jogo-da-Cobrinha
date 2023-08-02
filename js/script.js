@@ -148,7 +148,7 @@ const checkCollision = () => {
     const wallCollision = 
         head.x < 0 || head.x > canvasLimit || head.y < 0 || head.y > canvasLimit
     
-    const selfCollision = snake.find((position) => {
+    const selfCollision = snake.find((position, index) => {
         return index <  headIndex && position.x == head.x && position.y == head.y
     })
     
