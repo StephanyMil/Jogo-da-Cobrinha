@@ -200,7 +200,6 @@ document.addEventListener("keydown", ({ key }) => {
 })
 
 // Stephany
-/*
-buttonPlay.addEventListener() => {
+buttonPlay.addEventListener("click", () => {
     
-}*/
+})
