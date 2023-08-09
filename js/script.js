@@ -16,7 +16,7 @@ let snake = [initialPosition]
 
 //Aline
 const incrementScore = () => {
-    
+    score.innerText = +score.innerText + 15
 }
 
 // Stephany
@@ -159,7 +159,7 @@ const checkCollision = () => {
 
 // Aline
 const gameOver = () => {
-    
+    direction = undefined
 }
 
 const gameLoop = () => {
