@@ -2,7 +2,7 @@
 
 * {
     margin: 0;
-    padding: 0;
+    padding: 0; 
     box-sizing: border-box;
     font-family: "Poppings", sans-serif;
 }
@@ -18,7 +18,8 @@ body {
 }
 
 canvas {
-    background-color: #111; 
+    background-color: #111;
+    
 }
 
 .score {
@@ -40,6 +41,7 @@ canvas {
     display: none;
     flex-direction: column;
     align-items: center;
+    z-index: 1;
 }
 
 .game-over {
