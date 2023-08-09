@@ -37,7 +37,7 @@ const randomColor = () => {
     const blue = randomNumber(0, 255)
     const yellow = randomNumber(0, 255)
 
-    return `rgb(${red}, ${green}, ${blue}, ${yellow})`
+    return `rgb(${red}, ${green}, ${blue})`
 }
 
 // Stephany
@@ -68,6 +68,7 @@ const drawSnake = () => {
         if(index == snake.length - 1) {
             ctx.fillStyle = "#ffb6c0"
         }
+
         ctx.fillRect(position.x, position.y, size, size)
     })  
 }
@@ -122,6 +123,8 @@ const checkEat = () => {
     const head = snake[snake.length - 1]
 
     if (head.x == food.x && head.y == food.y) {
+        incrementScore()
+
         snake.push(head)
         audio.play()
 
@@ -133,8 +136,8 @@ const checkEat = () => {
             y = randomPosition()
         }
 
-        food.x = x
-        food.y = y
+        food.x = randomPosition()
+        food.y = randomPosition()
         food.color = randomColor()
     }
 }
@@ -160,16 +163,20 @@ const checkCollision = () => {
 // Aline
 const gameOver = () => {
     direction = undefined
+
+    menu.style.display = "flex"
+    finalScore.innerText = score.innerText
+    canvas.style.filter = "blur(2px)"
 }
 
 const gameLoop = () => {
     clearInterval(loopId)
 
     ctx.clearRect(0, 0, 600, 600)
-    moveSnake()
-    drawSnake()
     drawGrid()
     drawFood()
+    drawSnake()
+    moveSnake()
     checkEat()
     checkCollision()
 
