@@ -208,5 +208,9 @@ document.addEventListener("keydown", ({ key }) => {
 
 // Stephany
 buttonPlay.addEventListener("click", () => {
-    
+    score.innerText = "00"
+    menu.style.display = "none"
+    canvas.style.filter = "none"
+
+    snake = [initialPosition]
 })
