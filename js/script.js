@@ -213,4 +213,7 @@ buttonPlay.addEventListener("click", () => {
     canvas.style.filter = "none"
 
     snake = [initialPosition]
+    food.x = randomPosition()
+    food.y = randomPosition()
+    food.color = randomColor()
 })
