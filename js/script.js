@@ -62,11 +62,11 @@ const drawFood = () => {
 
 // Stephany
 const drawSnake = () => {
-    ctx.fillStyle = "#ddd";
+    ctx.fillStyle = "#82EEFD";
 
     snake.forEach((position, index) => {
         if (index == snake.length - 1) {
-            ctx.fillStyle = "#ffb6c0";
+            ctx.fillStyle = "#63C5DA";
         }
 
         ctx.fillRect(position.x, position.y, size, size);
