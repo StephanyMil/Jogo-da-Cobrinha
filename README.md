@@ -5,4 +5,4 @@ Professor CASSIO LEONARDO RODRIGUES.
 
 Alunas: Aline Lima e Stephany Milhomem.
 
-Tuturial: https://www.youtube.com/watch?v=LyWSsZktVOg
+Tutorial: https://www.youtube.com/watch?v=LyWSsZktVOg
